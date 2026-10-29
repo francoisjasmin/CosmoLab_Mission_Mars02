@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07152b">
+<title>CosmoLab 2.0 — ARES-7 · Mission Mars</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="starfield" aria-hidden="true"></div>
+<div class="app-shell">
+  <header class="topbar" aria-label="En-tête CosmoLab">
+    <div class="brand"><span class="brand-mark">◈</span><span><strong>COSMOLAB</strong><small>ARES-7 • MISSION MARS 2.0</small></span></div>
+    <div class="top-status"><span class="beacon"></span><span id="systemStatus">SYSTÈME EN ATTENTE</span></div>
+    <div class="top-actions"><span class="tiny-counter"><span>⭐</span> <strong id="topXP">0</strong> XP</span><span class="tiny-counter">🏆 <strong id="topScore">0</strong>/100</span><button class="icon-btn" id="helpButton" aria-label="Afficher l'aide" title="Aide">?</button></div>
+  </header>
+  <div class="shell-grid">
+    <aside class="sidebar" id="sidebar">
+      <div class="planet-window" aria-hidden="true"><div class="planet-glow"></div><div class="mars-planet"><i></i><i></i><i></i></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="ship">✦</div><div class="planet-label">MARS — HABITAT ARES-7</div></div>
+      <div class="sidebar-heading"><span>PARCOURS</span><span id="sideCount">0 / 5</span></div>
+      <div class="mission-list" id="missionList"></div>
+      <div class="side-progress"><div class="section-top"><span>PROGRESSION</span><strong id="sidePct">0%</strong></div><div class="track"><div id="sideBar" class="fill"></div></div></div>
+      <div class="side-footer"><button id="resetBtn" class="text-btn">↻ Recommencer la mission</button><span>Local • hors ligne • sans compte</span></div>
+    </aside>
+    <main id="main" class="main-content" tabindex="-1" aria-live="polite"></main>
+  </div>
+  <footer class="app-footer"><span>CosmoLab — laboratoire de données pédagogiques</span><span>LYRA IA de bord · Protocole ARES-7</span></footer>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="helpModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-label="Aide du jeu">
+  <div class="modal"><button class="modal-close" id="closeHelp" aria-label="Fermer">×</button><div class="eyebrow">MANUEL DE BORD</div><h2>Comment jouer ?</h2><p>Complète les cinq missions dans l'ordre. Chaque défi rapporte des points, et les erreurs déclenchent des indices.</p><div class="help-lines"><p><strong>🖱️</strong> Les classements et chronologies se manipulent par glisser-déposer ou avec les boutons.</p><p><strong>🤖</strong> Dans la Forge IA, copie un prompt, utilise l'IA de ton choix dans un autre onglet, puis colle le JSON obtenu.</p><p><strong>🛡️</strong> La validation se fait localement dans ton navigateur, sans envoyer tes données à un serveur.</p><p><strong>🏆</strong> Après cinq missions terminées, imprime ton rapport final de mission.</p></div><button class="btn primary" id="helpOkay">Compris !</button></div>
+</div>
+<script src="script.js" defer></script>
+</body>
+</html>
